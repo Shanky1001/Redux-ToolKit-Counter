@@ -29,12 +29,12 @@ const Home = () => {
           <Card sectioned>
             <TextField label='Increase By' type='number' value={input.inc} onChange={(e) => setInput({ ...input, inc: e })} />
             <br />
-            <Button primary onClick={() => dispatch(increaseBy(Number(input.inc)))}> Increase </Button>
+            <Button primary onClick={() => {dispatch(increaseBy(Number(input.inc)));setInput({...input,inc:''})}}> Increase </Button>
           </Card>
           <Card sectioned>
             <TextField label='Decrease By' type='number' value={input.dsc} onChange={(e) => setInput({ ...input, dsc: e })} />
             <br />
-            <Button destructive onClick={() => dispatch(decreaseBy(Number(input.dsc)))}> Decrease </Button>
+            <Button destructive onClick={() => {dispatch(decreaseBy(Number(input.dsc)));setInput({...input,dsc:''})}}> Decrease </Button>
           </Card>
         </Card>
       </Stack>
