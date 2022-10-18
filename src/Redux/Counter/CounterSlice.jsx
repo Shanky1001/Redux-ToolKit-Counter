@@ -19,6 +19,9 @@ export const counterSlice = createSlice({
                 state.count--;
         },
         increaseBy: (state, action) => {
+            if(+action.payload < 0){
+                alert("Counter can't go below zero. try adding other value!")
+            }else
             state.count += action.payload;
         },
         decreaseBy: (state, action) => {

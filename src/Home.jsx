@@ -1,4 +1,5 @@
 import { Box, Button, Card, Stack, Text, TextField } from '@shopify/polaris';
+
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrease, decreaseBy, increase, increaseBy, reset } from './Redux/Counter/CounterSlice';
@@ -20,7 +21,7 @@ const Home = () => {
         <Card sectioned>
           <Stack alignment='center' distribution='center'>
             <Button primary onClick={() => dispatch(increase())} > Increase </Button>
-            <Button onClick={()=>{ dispatch(reset()); setInput({inc:'',dsc:''})}}> Reset </Button>
+            <Button onClick={() => { dispatch(reset()); setInput({ inc: '', dsc: '' }) }}> Reset </Button>
             <Button destructive onClick={() => dispatch(decrease())}> Decrease</Button>
           </Stack>
         </Card>
